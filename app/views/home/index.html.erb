@@ -3,3 +3,4 @@
 <p><%= @response["recipeName"] %></p>
 <p><%= link_to image_tag(@response["imageUrlsBySize"]["90"]), "http://www.yummly.com/recipe/#{@response["id"]}" %></p>
 <p><%= link_to "#{@response["recipeName"]}", "http://www.yummly.com/recipe/#{@response["id"]}" %></p>
+<%= button_to "Refresh", home_index_path, :method => :get %>
