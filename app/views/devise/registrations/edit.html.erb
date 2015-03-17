@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= f.label :zip %><br />
-    <%= f.zip_field :zip, autofocus: true %>
+    <%= f.number_field :zip, autofocus: true %>
   </div>
 
 
@@ -50,7 +50,7 @@
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
-  <%= check_box_tag 'terms' %>
+  <%= f.check_box(:terms_and_conditions )%>
 
 <% end %>
 
