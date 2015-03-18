@@ -1,0 +1,13 @@
+<div class="card">
+  <p><%= @response["recipeName"] %></p>
+  <div class="card-image waves-effect waves-block waves-light">
+    <%= link_to image_tag(@response["imageUrlsBySize"]["90"]), "http://www.yummly.com/recipe/#{@response["id"]}" %>
+  </div>
+  <div class="card-content">
+    <%= link_to "#{@response["recipeName"]}", "http://www.yummly.com/recipe/#{@response["id"]}" %>
+  </div>
+
+<button class="refresh">
+  <%= link_to "Refresh", home_random_path, method: :post, remote: true %>
+</button>
+</div>

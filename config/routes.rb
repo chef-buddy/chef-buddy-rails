@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'card/show'
+
   get 'user/index'
   get 'home/index'
-  resources :home
+  post 'home/random'
   root 'home#index'
   devise_for :users, :controllers => {registrations: 'registrations'}
   resources :users
