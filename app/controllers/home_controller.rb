@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @response = HTTParty.get('http://chefbuddy.herokuapp.com/api/v1/suggested_recipe/')
+    @response = HTTParty.get('http://chefbuddy.herokuapp.com/api/v1/random_recipe/')
   end
 end

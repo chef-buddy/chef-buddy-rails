@@ -7,18 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div id="container">
   <div id="user nav">
-    <% if user_signed_in?  %>
-      Logged in as <strong> <%= current_user.email %></strong>
-      <%= link_to "Edit Profile", edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
-      <% end %>
-    </div>
-<%= yield %>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if user_signed_in?  %>
+          <li>Logged in as <strong> <%= current_user.email %></strong></li>
+          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li>|</li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li>|</li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </div>
 </div>
 
 </body>
