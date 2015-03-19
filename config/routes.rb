@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'home/index'
   post 'home/random'
   root 'home#index'
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  devise_for :users, controllers: {registrations: 'registrations',
+    omniauth_callbacks: "omniauth_callbacks"}
   resources :users
   namespace :api do
     namespace :v1 do
