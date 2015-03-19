@@ -1,13 +1,27 @@
-<div class="card">
-  <p><%= @response["recipeName"] %></p>
-  <div class="card-image waves-effect waves-block waves-light">
-    <%= link_to image_tag(@response["imageUrlsBySize"]["90"]), "http://www.yummly.com/recipe/#{@response["id"]}" %>
-  </div>
-  <div class="card-content">
-    <%= link_to "#{@response["recipeName"]}", "http://www.yummly.com/recipe/#{@response["id"]}" %>
-  </div>
 
-<button class="refresh">
-  <%= link_to "Refresh", home_random_path, method: :post, remote: true %>
-</button>
+<div class="row">
+  <div class="col s12">
+    <div class="card col s12 m6 offset-m3 l4 offset-l4">
+      <div class="card-image">
+        <%= link_to image_tag(@response["imageUrlsBySize"]["90"]), "http://www.yummly.com/recipe/#{@response["id"]}" %>
+      </div>
+      <div class="card-content">
+        <p><%= @response["recipeName"] %></p>
+      </div>
+      <div class="divider"></div>
+      <div class="rate">
+        <div class="try col s6 m6 l6">
+          <span>Try</span>
+          <%= link_to "Try", home_random_path, method: :post, remote: true %>
+        </div>
+        <div class="trash col s6 m6 l6">
+          <span>Trash</span>
+          <%= link_to "Trash", home_random_path, method: :post, remote: true %>
+        </div>
+      </div>
+    </div>
+    <div class="skip col s6 m4 offset-m4 l4 offset-l4">
+    <%= link_to "Skip", home_random_path, method: :post, remote: true %>
+    </div>
+  </div>
 </div>

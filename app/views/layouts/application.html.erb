@@ -9,9 +9,11 @@
 <body>
 
 <div id="container">
+
   <div id="user nav">
     <nav>
       <div class="nav-wrapper">
+        <a href="#" class="brand-logo">RecipeBuddy</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in?  %>
           <li>Logged in as <strong> <%= current_user.email %></strong></li>
@@ -26,7 +28,10 @@
         </ul>
       </div>
     </nav>
-    <%= yield %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </div>
 </div>
 
