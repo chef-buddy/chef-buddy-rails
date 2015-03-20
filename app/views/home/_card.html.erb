@@ -1,9 +1,9 @@
-
+<!--
 <div class="row">
   <div class="col s12">
     <div class="card col s12 m6 offset-m3 l4 offset-l4">
       <div class="card-image">
-        <%= link_to image_tag(@response["imageUrlsBySize"]["90"]), "http://www.yummly.com/recipe/#{@response["id"]}" %>
+        <%= link_to image_tag(@response["largeImage"]), "http://www.yummly.com/recipe/#{@response["id"]}" %>
       </div>
       <div class="card-content">
         <p><%= @response["recipeName"] %></p>
@@ -24,4 +24,34 @@
     <%= link_to "Skip", home_random_path, method: :post, remote: true %>
     </div>
   </div>
-</div>
+</div> -->
+
+<style>.row .col{padding: 0;}</style>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="recipe col s6 offset-s3">
+        <div class="recipe-img-container">
+          <img class="recipe-image col s12" src="http://www.stmatthewseugene.com/Food_Pantry.jpg">
+          <!-- <%= link_to image_tag(@response["largeImage"]), "http://www.yummly.com/recipe/#{@response["id"]}" %> -->
+        </div>
+        <div class="recipe-title col s12">
+          <span><%= @response["recipeName"] %></span>
+        </div>
+
+        <section class="recipe-info col s12">
+          <div class="trash col s4">
+            <%= link_to "Trash", home_random_path, method: :post, remote: true %>
+            <p>Trash</p>
+          </div>
+          <div class="rating col s4">
+            <p>90%</p>
+          </div>
+          <div class="try col s4">
+            <%= link_to "Try", home_random_path, method: :post, remote: true %>
+            <p>Try</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
